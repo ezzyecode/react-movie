@@ -13,6 +13,26 @@
   }
 }
 
+/* ซ่อนเมนูแบบเบอร์เกอร์เมื่อหน้าจอมีความกว้างมากกว่า 768px */
+@media (min-width: 768px) {
+  .desktop-menu {
+    display: flex;
+  }
+  .mobile-menu {
+    display: none;
+  }
+}
+
+/* ซ่อนเมนูแบบปกติเมื่อหน้าจอมีความกว้างน้อยกว่าหรือเท่ากับ 768px */
+@media (max-width: 768px) {
+  .desktop-menu {
+    display: none;
+  }
+  .mobile-menu {
+    display: block;
+  }
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -35,4 +55,122 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #222;
+  color: #fff;
+}
+
+/* ตัวอย่าง CSS สำหรับ Navbar และ Hamburger menu */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #212121;
+  /* padding: 1rem; */
+}
+
+header a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.links {
+  display: flex;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.links li {
+  padding: 0 1rem;
+}
+
+.links li a {
+  display: flex;
+  align-items: center;
+}
+
+.links li a .link-icon {
+  margin-right: 0.5rem;
+}
+
+.user {
+  display: flex;
+  list-style-type: none;
+}
+
+.user li {
+  padding: 0 1rem;
+}
+
+.sign-in {
+  background-color: #e6b31e;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+/* โค้ดสำหรับแสดงเมนู Hamburger ในหน้าจอขนาดเล็ก */
+.hamburger-menu{
+  display: none;
+}
+
+.right .bm-burger-button {
+  left: initial;
+  right: 36px;
+}
+
+.hamburger-react {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .hamburger-react {
+    display: block;
+  }
+
+  .links {
+    display: none;
+  }
+}
+
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 1rem;
+}
+
+.movie-card {
+  background-color: #7a5e5e;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.movie-card img {
+  width: 100%;
+  height: auto;
+}
+
+.info {
+  align-items: center;
+  background-color: #e6b31e;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  margin: initial;
+  padding: 5px 10px;
+}
+
+.info {
+  overflow: hidden;
+  width: 100%;
+  z-index: 100;
+}
+
+.tille {
+  white-space: nowrap;
+  animation: text 6s linear infinite;
+  animation-delay: 3s;
 }
