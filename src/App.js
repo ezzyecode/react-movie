@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import './App.css';
 import Home from './pages/Home';
 import AddMovie from './pages/AddMovie';
+import MovieEditPage from './pages/MovieEditPage';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/addMovie" component={AddMovie} />
+        <Route path="/movie/edit/:movieId" component={MovieEditPage} />
       </Switch>
     </div>
   );
